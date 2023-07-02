@@ -1,0 +1,321 @@
+.group-child31,
+.transcation-history-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro-100);
+  width: 1017px;
+  height: 72px;
+}
+.group-child31 {
+  border-radius: var(--br-lgi-5);
+  background-color: var(--color-gray-200);
+  width: 135px;
+  height: 43px;
+}
+.market3 {
+  position: absolute;
+  top: 8px;
+  left: 25px;
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  color: var(--table-background);
+  text-align: left;
+  display: inline-block;
+  width: 83.19px;
+  height: 25.36px;
+}
+.rectangle-parent30 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 14px;
+  left: 297px;
+  width: 135px;
+  height: 43px;
+}
+.group-child32 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-2xl-5);
+  background-color: var(--color-gray-300);
+  width: 129px;
+  height: 43px;
+}
+.p2p4 {
+  position: absolute;
+  top: 10px;
+  left: 43px;
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  color: var(--table-background);
+  text-align: left;
+}
+.rectangle-parent31 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  left: 491px;
+  width: 129px;
+  height: 43px;
+}
+.group-child33 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-2xl-5);
+  background-color: var(--color-gray-400);
+  width: 106px;
+  height: 43px;
+}
+.logout3 {
+  position: absolute;
+  top: 8.39px;
+  left: 22px;
+  font-weight: 900;
+  display: inline-block;
+  width: 64px;
+  height: 24.12px;
+}
+.rectangle-parent32 {
+  position: absolute;
+  top: 14px;
+  left: 886px;
+  width: 106px;
+  height: 43px;
+  cursor: pointer;
+}
+.group-child34 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-2xl-5);
+  background-color: var(--color-gray-500);
+  width: 194px;
+  height: 43px;
+}
+.dashboard4 {
+  position: absolute;
+  top: 8px;
+  left: 11px;
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  color: var(--table-background);
+  text-align: left;
+  display: inline-block;
+  width: 172.67px;
+  height: 23px;
+}
+.group-child35,
+.rectangle-parent33 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  position: absolute;
+}
+.rectangle-parent33 {
+  background-color: transparent;
+  top: 14px;
+  left: 56px;
+  width: 194px;
+  height: 43px;
+}
+.group-child35 {
+  background-color: var(--color-slateblue);
+  top: 0;
+  left: 0;
+  border-radius: 23.5px;
+  width: 338px;
+  height: 69px;
+}
+.your-transaction-history {
+  position: absolute;
+  top: 19px;
+  left: 30px;
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  color: var(--table-background);
+  text-align: left;
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+}
+.rectangle-parent34 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 204px;
+  left: 153px;
+  width: 338px;
+  height: 69px;
+}
+.name3,
+.tablecell-child13 {
+  align-self: stretch;
+  position: relative;
+}
+.tablecell-child13 {
+  max-width: 100%;
+  overflow: hidden;
+  height: 0;
+  flex-shrink: 0;
+  display: none;
+}
+.name3 {
+  letter-spacing: -0.06em;
+  line-height: 150%;
+}
+.content16 {
+  align-self: stretch;
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-5xs);
+}
+.content16,
+.tablecell20,
+.tablecell21,
+.tablecell28 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tablecell21 {
+  align-self: stretch;
+  border-top: 1px solid var(--table-border);
+  border-left: 1px solid var(--table-border);
+}
+.tablecell20,
+.tablecell28 {
+  background-color: var(--color-gray-100);
+}
+.tablecell20 {
+  align-self: stretch;
+  width: 105px;
+  flex-shrink: 0;
+}
+.tablecell28 {
+  width: 135px;
+}
+.ignore-icon2,
+.tablecell28,
+.tablecell30 {
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.tablecell30 {
+  background-color: var(--color-gray-100);
+  width: 134px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.ignore-icon2 {
+  position: relative;
+  max-height: 100%;
+  width: 1px;
+  overflow: hidden;
+}
+.tablecell34,
+.tablerowdefault4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tablerowdefault4 {
+  background-color: var(--table-background);
+  overflow: hidden;
+  flex-direction: row;
+}
+.tablecell34 {
+  align-self: stretch;
+  background-color: var(--color-gray-100);
+  border-top: 1px solid var(--table-border);
+  border-left: 1px solid var(--table-border);
+  box-sizing: border-box;
+  width: 105px;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.vikash89gmailcom {
+  margin: 0;
+}
+.tablecell38,
+.tablecell39 {
+  align-self: stretch;
+  background-color: var(--color-gray-100);
+  border-top: 1px solid var(--table-border);
+  border-left: 1px solid var(--table-border);
+  box-sizing: border-box;
+  width: 135px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tablecell39 {
+  width: 134px;
+}
+.vikku {
+  margin-block-start: 0;
+  margin-block-end: 4px;
+}
+.ignore-icon3 {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 1px;
+  flex-shrink: 0;
+}
+.table1 {
+  position: absolute;
+  top: 374px;
+  left: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  font-family: var(--font-fira-code);
+}
+.coinfun3 {
+  position: absolute;
+  top: 109px;
+  left: 736px;
+  font-size: var(--font-size-45xl);
+  letter-spacing: -0.02em;
+  display: inline-block;
+  font-family: var(--font-ubuntu);
+  color: var(--color-goldenrod);
+  width: 256px;
+  height: 34px;
+}
+.transcation-history {
+  position: relative;
+  width: 100%;
+  height: 875px;
+  overflow: hidden;
+  background-image: url(./public/p2p-sell@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--table-background);
+  font-family: var(--font-roboto);
+}

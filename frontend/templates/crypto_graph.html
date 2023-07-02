@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% block title %}
+Currency-Graph
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/btc_graph.css')}}"
+{% endblock link %}
+
+{%block body %}
+
+<div class="btc-graph">
+ 
+  <div class="group-div">
+    <div class="group-child1"></div>
+    <div class="btcusdt">{{data['symbol']}} /USDT</div>
+  </div>
+  <div class="btc-graph-inner">
+    <div class="rectangle-parent1">
+      <div class="group-child2"></div>
+      <div class="hr-change-1567-container">
+        <p class="hr-change">24 hr Change</p>
+        <p class="hr-change">{{data['24h_change']}} $</p>
+      </div>
+    </div>
+  </div>
+  <div class="btc-graph-inner1">
+    <div class="rectangle-parent1">
+      <div class="group-child2"></div>
+      <div class="hr-change-1567-container">
+        <p class="hr-change">24 hr High</p>
+        <p class="hr-change">{{data['24h_high']}} $</p>
+      </div>
+    </div>
+  </div>
+  <div class="btc-graph-inner2">
+    <button class="rectangle-parent3">
+      <div class="group-child2"></div>
+      <div class="hr-low-container">
+        <p class="hr-change">24 hr Low</p>
+        <p class="hr-change">{{data['24h_low']}} $</p>
+      </div>
+    </button>
+  </div>
+  <div class="btc-graph-inner3">
+    <div class="rectangle-parent1">
+      <div class="group-child2"></div>
+      <div class="hr-change-1567-container">
+        <p class="hr-change">Current Price</p>
+        <p class="hr-change">{{data['last_price']}} $</p>
+      </div>
+    </div>
+  </div>
+  <a href="/trade_page/{{data['symbol']}}/1m"  style="position: relative;">
+    <img class="refresh-img" src="{{url_for('static',filename='images/refresh.jpg')}}" alt="Refresh">
+  </a>
+  
+  <b class="coinfun">Coinfun</b>
+  <img class="image-14-icon" alt="Graph" src="data:image/jpg;charset=utf-8;base64,{{ image }}" />
+  <div class="btc-graph-inner4">
+      <div class="group-child6"></div>
+      <div class="m-15-m trading-button-container">
+        <button type="button" class="btn btn-primary trading-button" onclick="window.location.href= '/trade_page/{{data['symbol']}}/1m' ;">1 Min Chart</button>
+        <button type="button" class="btn btn-primary trading-button" onclick="window.location.href= '/trade_page/{{data['symbol']}}/15m' ;">15 Min Chart</button>
+        <button type="button" class="btn btn-primary trading-button" onclick="window.location.href= '/trade_page/{{data['symbol']}}/1h' ;">1 Hour Chart</button>
+        <button type="button" class="btn btn-primary trading-button" onclick="window.location.href= '/trade_page/{{data['symbol']}}/1d' ;">1 Day Chart</button>
+      </div>
+  </div>
+  <div class="btc-graph-inner5 transform-rigth-quantity">
+    <button class="rectangle-parent6" id="buy">
+      <div class="group-child7"></div>
+      <div class="buy-btc">Buy {{data['symbol']}}</div>
+    </button>
+  </div>
+  <div class="btc-graph-inner6 transform-rigth-quantity">
+    <button class="rectangle-parent7" id="sell">
+      <div class="group-child8"></div>
+      <div class="sell-btc">Sell {{data['symbol']}}</div>
+    </button>
+  </div>
+  <div class="btc-graph-inner7 transform-rigth">
+    <div class="rectangle-parent8">
+      <div class="group-child9"></div>
+      <div class="price-24407-container">
+        <span>Price</span><br><span class="usdt">  {{data['last_price']}} USDT</span> <br><br>
+        <span>Available USDT</span><span class="usdt"><br></span>  {{data['USDT']}}</span> <br><br>
+        <span>Available {{data['symbol']}}</span><span class="usdt"><br></span>{{data['crypto_size']}}</span> <br><br>
+        <!-- <span class="usdt">Available {{data['symbol']}} {{data['last_price']}} USDT</p> -->
+        <span>Estimated Crypto Value</span><span class="usdt">  {{data['Current_crypto_value']}} USDT</span>
+      </div>
+    </div>
+  </div>
+  <div class="btc-graph-inner8 transform-rigth-quantity">
+    <div class="rectangle-parent8">
+      <div class="group-child9"></div>
+      <div class="price-24407-container">
+        <!-- <form method="post" action="/">
+          <label for="amount">Enter Quantity</label>
+          <input type="number" id="amount" name="amount" required>
+          <button type="submit">Submit</button>
+        </form> -->
+        <input type="number" name="Enter Quantity" placeholder="Enter Quantity" id="amount" >
+      </div>
+    </div>
+  </div>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <h3 style="text-align: center; color: red; position: absolute; top: 830px; left: 1050px;">{{messages[0]}}</h3>
+  {% endif %}
+  {% endwith %}
+
+  <p class="paragraph-xyz-crypto">
+      {% if data['symbol'] == "BTC" %}
+        About Bitcoin (BTC) <br>
+        Bitcoin is one of the most popular cryptocurrencies in the market. First introduced in 2009 by Satoshi Nakamoto, Bitcoin has held the crypto market’s number one spot according to market capitalization. Bitcoin paved the way for many existing altcoins in the market and marked a pivotal moment for digital payment solutions.  
+        As the world’s first cryptocurrency, Bitcoin has come a long way in terms of its value. However, one does not have to buy an entire bitcoin as bitcoins can be divided into small units called satoshis, named after the creator. A satoshi is equivalent to 0.00000001 bitcoin.
+        There is no physical BTC token so you can think of bitcoin as digital money. Bitcoin transactions are fully transparent and can’t be censored. You can send money to anyone in the world with ease. It’s a financial system backed by thousands of computers, known as ‘nodes’, around the world, instead of a single central bank or government, i.e. hence the term ‘decentralization’. 
+        
+      {% elif data['symbol'] == "ETH" %}
+        About Ethereum (ETH) <br>
+        Ethereum (ETH) is the second-largest cryptocurrency token in terms of market capitalization. This can be attributed to how it has brought much innovation and many use cases to the industry by introducing smart contract functionality, which has paved the way for decentralized finance (DeFi) and decentralized apps (DApps).
+        Ethereum allows users to build and deploy software, commonly in the form of DApps, which are then powered by a global distributed network of computers running Ethereum. The network is decentralized, making it highly resistant to any form of censorship or downtime.
+        In addition, Ethereum is an open-source blockchain platform that runs on the usage of its native currency, called Ether or ETH. All network transaction fees, or gas fees, are paid in ETH. ETH specifically used by the Ethereum blockchain to pay for transactions, and is responsible for powering just about everything that occurs on the network. 
+        The Ethereum network can be used by anybody to create and run smart contracts, which are software programs that run autonomously, without user intervention. Ethereum’s growth can be attributed in part to its smart contract capability, which has enabled a growing ecosystem of DApps, non-fungible tokens (NFTs) and more. 
+        By default, Ethereum uses a proof-of-work (PoW) consensus mechanism, but the network is slowly migrating to a proof-of-stake (PoS) as part of its Ethereum upgrade.  The upgrade started in December 2020 with the launch of the Beacon Chain, and was supported by the Ethereum community through its staking of 1 million ETH in the first week alone. 
+      {% elif data['symbol'] == "DOGE" %}   
+        About Dogecoin (DOGE)  <br>
+        Dogecoin (DOGE) is a novelty cryptocurrency originally launched as a “memecoin” within the cryptocurrency community. Over time, however, Dogecoin has grown into a large blockchain network and is one of the most popular altcoins available in the market.
+        There is also a serious basis and reason for the creation and development of Dogecoin. Co-founders, Jackson Palmer and Billy Markus, two software engineers by professional background and experience, wanted to make cryptocurrency accessible to individuals outside of Bitcoin.
+        It was expressed by the founders that the oversaturation and difficulty in mining Bitcoin from the time of its creation to the start of Dogecoin, made it difficult for the common person to participate in the mining process. This was because of limited resources as well as technological experience. Dogecoin was envisioned as an entry for the less experienced to become involved in the crypto industry.
+        The launch of Bitcoin in 2009 catalyzed the creation and launch of many different cryptocurrencies, each offering different use cases and functionality. Dogecoin, however, offers no specific use cases — DOGE was a collaborative effort by the crypto community and is now listed on most major exchange platforms.
+        Dogecoin was originally based on Litecoin and was launched in 2013. Primarily designed to provide a light-hearted means of communicating the basic function of cryptocurrency to mainstream audiences, Dogecoin is based on the “Doge” Shiba Inu meme. DOGE price is updated and available in real time on Binance.
+      {% elif data['symbol'] == "BNB" %} 
+        About BNB  <br>
+        BNB is a cryptocurrency that can be used to trade and pay fees on the Binance cryptocurrency exchange. BNB is also the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, BNB is useful to users in a wide range of applications and use cases.
+        BNB was launched through an Initial Coin Offering (or ICO) that took place from June 26th to July 3rd, 2017 - 11 days before the Binance Exchange opened for trading. The issue price was 1 ETH for 2,700 BNB or 1 BTC for 20,000 BNB. Although BNB was launched through an ICO, BNB does not provide users with a claim on Binance profits and does not represent an investment in Binance.   
+        With various applications both within the BNB Chain ecosystem and beyond, BNB serves numerous purposes. Originally launched as an ERC-20 token on the Ethereum blockchain, BNB has now migrated to the main BNB Chain. Although the initial total supply was set at 200 million coins, the supply is gradually decreasing as a result of frequent coin burns. The current price of BNB is updated and available in real-time on Binance.
+      {% elif data['symbol'] == "ADA" %} 
+        About Cardano (ADA)  <br>
+        Cardano (ADA) is a decentralized proof-of-stake (PoS) blockchain platform that launched in 2017. It was first conceptualized in 2015 by Charles Hoskinson, one of the co-founders of the Ethereum blockchain network. 
+        Cardano was developed to address the blockchain scaling and infrastructural limitations of first-generation decentralized blockchain network Bitcoin, and second-generation networks like Ethereum. In fact, Cardano is seen as a more scalable alternative to Ethereum. Cardano price is updated in real-time on Binance. 
+        To date, the Cardano blockchain network is one of the largest to have successfully implemented a PoS consensus mechanism that’s more power-efficient than alternative proof-of-work (PoW) blockchain networks. Function on the Cardano blockchain is facilitated by the capabilities granted by smart contract protocol, a technology initially popularized by Ethereum.
+        The native Cardano cryptocurrency token is ADA, which enables users to participate in network operations. The token is named after Ada Lovelace, a 19th century mathematician recognized as the world’s first computer programmer.
+        Cardano reportedly made significant progress in improving network scalability in 2022 through the Vasil hard fork. The network is further exploring this area with the preparation for Hydra, which provides a layer 2 scaling solution. This protocol will allow developers to introduce specialized and complex protocols to the platform by building on top of Cardano.
+        In addition, Cardano has plans to launch two stablecoins and continue developing oracles, which are essential for connecting on-chain and off-chain data. The current price of ADA can be accessed in real-time on Binance. The current price of ADA is updated and available in real time on Binance.
+      {% elif data['symbol'] == "MATIC" %}  
+        About Polygon (MATIC) <br>
+        Polygon (MATIC) is a layer 2 scaling solution designed to build upon the Ethereum blockchain, facilitating higher transaction throughput and lower transaction costs. Formerly known as the Matic Network, Polygon aims to create the blockchain infrastructure necessary to deploy and use Etheruem-based decentralized applications (DApps) at scale. 
+        Functioning as an add-on to the Ethereum blockchain, Polygon uses scaling solutions in order to increase the size, capacity, security, and efficiency of the Etheruem network. The Polygon platform is a multi-level system that creates sidechains upon which transactions are executed before they are merged with the main Ethereum chain, reducing the overall load on the Ethereum network.
+        Polygon integrates multiple sidechain solutions, including plasma chains, which consolidate transactions into a single batch and commit them to the Etheruem blockchain; ZK-Rollups, which integrate multiple transactions into a single transaction; and optimistic roll-ups, which integrate and scale smart contracts.
+        The Polygon ecosystem is designed to provide users with the ability to create DApps, services, and platforms on Ethereum without high fees or slow transaction speeds. Polygon’s use cases include decentralized finance (DeFi) applications, blockchain-based games, and non-fungible token (NFT) marketplaces. Polygon price is updated and available in real-time on Binance.
+      {% elif data['symbol'] == "SOL" %}  
+        About Solana (SOL) <br>
+        Solana is an independent Layer 1 blockchain created as a fast and efficient network with an underlying smart contract protocol. Since its launch in 2020, the Solana network has been dubbed a competitor to Ethereum, and even nicknamed ‘The Ethereum Killer’.
+        The network’s scalability, combined with its low fees and high speed, makes it a leading choice for many NFT-based decentralized applications (dApps), as well as decentralized finance (DeFi) and digital blockchain-based payment ecosystems.
+        The Solana network focuses on high transaction throughput and short processing time, which it achieves via its Proof-of-History (PoH) technology. Solana claims to be able to process 65,000 transactions per second, making it one of the fastest in the industry.
+        The Solana blockchain linearly hashes transactions to create a verifiable order of all the network's activity in order to reach the aforementioned speed. Because of this, there's no need to rely on a block creator's timestamp, or for network validators to check the transaction order.
+        The Solana network was co-founded in 2017 by systems engineer and computer programmer Anatoly Yakovenko and current Solana COO Raj Gokal.  The network operates on the PoH timing mechanism, which was implemented prior to the consensus layer that now operates on a proof-of-stake (PoS) algorithm.
+      {% else %}
+        About Ripple (XRP) <br>
+        Ripple (XRP) is a decentralized payment network that was built to replace the traditional money transfer network, SWIFT. Ripple is a uniquely designed blockchain that works on a consensus model in which all nodes given access to the system must validate transactions on the network. This model ensures that payments on the network are subject to considerable security measures without compromised efficiency. Transactions on Ripple are typically completed within four to five seconds, much faster than some on other independent blockchain networks that use different protocols. XRP price is updated live on Binance.
+        The Ripple network is powered by its native cryptocurrency, XRP. A fractional .00001 XRP is charged for every transaction processed on the underlying XRP Ledger (XRPL). Another interesting feature of XRP is that miners receive their validation fees from the aforementioned charge, as all XRP coins were placed into circulation when the network was first launched. This makes Ripple stand out in the cryptocurrency industry, and such factors can affect XRP price.
+        Despite a suit brought about by the US Securities and Exchange Commission (SEC) in 2020, Ripple has maintained its position among the top 10 cryptocurrencies by volume. The network is still promoted as a superior payment system despite the ongoing suit claiming that Ripple should have registered as a security, allegations that have been consistently denied since they were first made.
+        XRP also functions as an intermediary on the XRPL network, which is able to swap digital and fiat currencies through its network DeFi protocol. This means XRP is used in the processing of digital and fiat currency transfers on XRPL network. When XRPL was originally engineered in 2012 by Jed McCaleb, Arthur Britto and David Schwartz prior to the formation of the blockchain company, the idea was for Ripple to be a global payment network that would offer a better solution than the traditional banking and financial systems in place. Ripple Labs worked to enhance global payment capabilities, rather than to replace the old system.
+        In February 2023, XRP Ledger (XRPL) developers unveiled a proposal for a cross-chain bridge they believe would expand the blockchain's functionality. The live price of XRP is updated and available in real time on Binance.
+      {% endif %}
+    </p>
+
+</div>
+
+
+
+<div id="google_element"></div>
+
+<script src="http://translate.google.com/translate_a/element.js?cb=
+loadGoogleTranslate"></script>
+
+<script>
+    function loadGoogleTranslate(){
+        new google.translate.TranslateElement(
+            "google_element"
+        );
+    }
+</script>
+
+<script>
+  var groupButton = document.getElementById("market");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      window.location.href = "/market_allcrypto";
+      // Please sync "All Cryptos" to the project
+    });
+  }
+
+  var groupButton1 = document.getElementById("dashboard");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      window.location.href = "/dashboard";
+      // Please sync "P2P Buy" to the project
+    });
+  }
+
+  var groupContainer = document.getElementById("logout");
+  if (groupContainer) {
+    groupContainer.addEventListener("click", function (e) {
+      window.location.href = "/";
+      // Please sync "login" to the project
+    });
+  }
+
+  var groupButton2 = document.getElementById("p2p_buy");
+  if (groupButton2) {
+    groupButton2.addEventListener("click", function (e) {
+      window.location.href = "/p2p_buy";
+    });
+  }
+
+  var groupButton5 = document.getElementById("buy");
+  if (groupButton5) {
+    groupButton5.addEventListener("click", function (e) {
+      var amountInput = document.getElementById("amount");
+      var amountValue = amountInput.value;
+      if (amountValue == "") {
+          alert("Please enter a quantity.");
+          return;
+        }
+      window.location.href = "/do_crypto_trade/buy/{{data['symbol']}}/"+amountValue;
+
+      // Please sync "P2P Buy" to the project
+    });
+  }
+
+  var groupButton5 = document.getElementById("sell");
+  if (groupButton5) {
+    groupButton5.addEventListener("click", function (e) {
+
+      var amountInput = document.getElementById("amount");
+      var amountValue = amountInput.value;
+      if (amountValue == "") {
+          alert("Please enter a quantity.");
+          return;
+        }
+      window.location.href = "/do_crypto_trade/sell/{{data['symbol']}}/"+amountValue;
+
+      // Please sync "P2P Buy" to the project
+    });
+  }
+
+</script>
+
+{% endblock body %}

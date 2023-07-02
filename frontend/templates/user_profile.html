@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block title %}
+user-profile
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/user_profile.css')}}"
+{% endblock link %}
+
+{%block body %}
+<h1 style="color: rgb(255, 0, 157); margin-left: 800px; font-size: 60px;">Coinfun</h1>
+  <div class="user_profile">
+    <div class="user_profile1" style="margin-left: 100px;">
+      <h2>Username: {{data['username']}}</h2>
+      <h2>Email: {{data['email_id']}}</h2>
+      <h2>Phone: {{data['contact_number']}}</h2>
+      {% if data['kyc'] %}
+        <h2>Status: Verified</h2>
+      {% else %}
+        <h2>Status : UnVerified</h2>
+        <h2 style="position: relative; top: 100px; margin-left: -100px;">Upload your Photo showing your face clearly</h2>
+        <form action="/kyc" method="POST" enctype="multipart/form-data" style="position: relative; margin-top: 100px;">
+          <input type="file" name="photo">
+          <button type="submit" class="btn btn-success"
+            style="font-size: 20px; color: black; position: relative;  background-color: rgb(187, 34, 121); border-radius: 10px; margin-top: 20px; margin-left: -80px;">Get Verified
+          </button>
+        </form>
+      {% endif %}
+      
+    </div>
+    <div id="photo_form" class="change_photo">
+      {% if data['profile_pic']|length > 0 %}
+        <img id="profile_pic" src="data:image/png;charset=utf-8;base64,{{ data['profile_pic'] }}" alt="Profile_Pic"
+        style="margin-right: -200px; margin-top: 100px; height: 185px; width: 185px; border-radius: 20px; ">
+      {% else %}
+        <img id="profile_pic" src="{{url_for('static',filename='images/blank.jpg')}}" alt="Profile_Pic" style="margin-right: 100px; margin-top: 100px; height: 150px; width: 150px; border-radius: 20px;">
+      {% endif %}
+      <form id="upload_pic_form" action="/upload_pic" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo">
+        <button type="submit" class="btn btn-success"
+          style="font-size: 30px; color: yellow; background-color: black; border-radius: 10px; margin-top: 20px; margin-right: 70px;">Change Photo
+        </button>
+      </form>
+    </div>
+    {% if msg|length > 0 %}
+      <h2 id="msg" style="position: relative; top: 450px; left: 550px;">{{msg}}</h2>
+    {% else %}
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <h2 id="msg" style="position: relative; top: 450px; left: 550px;">{{messages[0]}}</h2>
+      {% endif %}
+      {% endwith %}
+    {% endif %}
+    <!-- <h2 style="position: relative; top: 450px; left: 550px;">Hello Vikash -> {{msg}}</h2> -->
+
+
+<script>
+
+    function showMessage(message, duration) {
+        var messageElement = document.getElementById("msg");
+        if(messageElement!=null){
+          messageElement.innerHTML = message;
+          messageElement.style.display = "block";
+          setTimeout(function() {
+            messageElement.style.display = "none";
+          }, duration);
+        }
+        }
+      var message = "{{msg}}";
+      showMessage(message, 10000);
+
+
+  var profile_pic = document.getElementById("profile_pic");
+  var groupButton = document.getElementById("logout");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      // Please sync "All Cryptos" to the project
+      window.location.href = "/";
+    });
+  }
+
+  var groupButton1 = document.getElementById("p2p_buy");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      // Please sync "P2P Buy" to the project
+      window.location.href = "/p2p_buy";
+    });
+  }
+
+  var groupContainer = document.getElementById("market");
+  if (groupContainer) {
+    groupContainer.addEventListener("click", function (e) {
+      // Please sync "login" to the project
+      window.location.href = "/market_allcrypto";
+    });
+  }
+
+  var groupButton2 = document.getElementById("dashboard");
+  if (groupButton2) {
+    groupButton2.addEventListener("click", function (e) {
+      window.location.href = "/dashboard";
+    });
+  }
+  
+  var photo_form = document.getElementById("photo_form");
+  var uploadForm = document.getElementById("upload_pic_form");
+  if (uploadForm) {
+    uploadForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/upload_pic", true);
+      xhr.onload = function () {
+        if (this.status == 200) {
+          const response = JSON.parse(this.response);
+          console.log(response['profile_pic']);
+          // create new image element and set its src to the base64 string
+          const image = document.createElement("img");
+          image.src = `data:image/png;charset=utf-8;base64,${response['profile_pic']}`;
+          // add image as first child of photo_form
+          photo_form.insertBefore(image, photo_form.firstChild);
+          // remove old image
+          photo_form.removeChild(profile_pic);
+          // profile_pic.src = `data:image/png;charset=utf-8;base64,${response['profile_pic']}`
+          window.location.href = "/user_profile";
+        }
+      };
+      xhr.send(formData);
+    });
+  }
+</script>
+
+{% endblock body %}

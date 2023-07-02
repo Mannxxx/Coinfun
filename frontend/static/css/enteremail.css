@@ -1,0 +1,54 @@
+body{
+  /* background-image: {{url_for('static',filename='images/p2p_buy.css')}}; */
+  background-image: url("../images/backimg2.webp");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
+
+  h1 {
+    text-align: center;
+    margin-top: 350px;
+  }
+  
+  form {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  label[for="email"] {
+    position: absolute;
+    top: 260px;
+    left: 610px;
+    font-size: 20px;
+  }
+  
+  
+  input[type="email"] {
+    padding: 10px;
+    width: 30%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    position: absolute;
+    top: 300px;
+    left: 600px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    position: absolute;
+    top: 400px;
+    left: 800px;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  

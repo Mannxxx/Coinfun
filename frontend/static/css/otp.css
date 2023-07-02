@@ -1,0 +1,54 @@
+body{
+    /* background-image: {{url_for('static',filename='images/p2p_buy.css')}}; */
+    background-image: url("../images/backimg2.webp");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+
+form {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #f1f1f1;
+    padding: 10px;
+    position: absolute;
+    top: 200px;
+    left:420px;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button[type=submit], #resend-otp-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    position: absolute;
+    top: 400px;
+    left: 700px;
+}
+button[type=submit], #verify-otp-btn {
+    width: 20%;
+    position: absolute;
+    top: 120px;
+    left: 370px;
+}
+
+button[type=submit]:hover, #resend-otp-btn:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+    text-align: center;
+}

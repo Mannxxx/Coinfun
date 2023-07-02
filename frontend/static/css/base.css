@@ -1,0 +1,166 @@
+body{
+    /* background-image: {{url_for('static',filename='images/p2p_buy.css')}}; */
+    background-image: url("../images/backimg2.webp");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+.all-cryptos-child,
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: var(--color-gainsboro-100);
+    width: 100%;
+    height: 72px;
+    /* background-color: lightskyblue; */
+}
+
+.group-child {
+    border-radius: var(--br-lgi-5);
+    background-color: var(--color-gray-500);
+    width: 135px;
+    height: 43px;
+
+}
+
+.market {
+    position: absolute;
+    top: 8px;
+    left: 25px;
+    font-weight: 900;
+    display: inline-block;
+    width: 83.19px;
+    height: 25.36px;
+}
+
+.all-cryptos {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background-image: url(./public/all-cryptos@3x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    font-size: var(--font-size-xl);
+    color: var(--table-background);
+    font-family: var(--font-roboto);
+}
+
+.group-item,
+.rectangle-parent {
+    position: absolute;
+    /* background-color: var(--color-gray-500); */
+    top: 14px;
+    left: 297px;
+    width: 135px;
+    height: 43px;
+}
+
+.group-item {
+    top: 0;
+    left: 0;
+    border-radius: var(--br-2xl-5);
+    background-color: var(--color-gray-500);
+    width: 129px;
+}
+
+.p2p {
+    position: absolute;
+    top: 10px;
+    left: 43px;
+    font-size: var(--font-size-xl);
+    font-weight: 900;
+    font-family: var(--font-roboto);
+    color: var(--table-background);
+    text-align: left;
+}
+
+.rectangle-group {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    left: 491px;
+    width: 129px;
+    height: 43px;
+}
+
+.group-inner-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-2xl-5);
+    background-color: rgb(104, 144, 23);
+    width: 106px;
+    height: 43px;
+    padding: 10px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+
+/* .logout-nav {
+    position: absolute;
+    align-content: end;
+    top: 8.39px;
+    left: 22px;
+    font-weight: 900;
+    display: inline-block;
+    width: 64px;
+    height: 24.12px;
+    z-index: 5;
+} */
+
+
+.rectangle-container-nav {
+    position: absolute;
+    top: 14px;
+    left: 1300px;
+    width: 106px;
+    height: 43px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.rectangle-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-2xl-5);
+    background-color: var(--color-gray-500);
+    width: 194px;
+    height: 43px;
+}
+
+.dashboard {
+    position: absolute;
+    top: 8px;
+    left: 11px;
+    font-size: var(--font-size-xl);
+    font-weight: 900;
+    font-family: var(--font-roboto);
+    color: var(--table-background);
+    text-align: center;
+    display: inline-block;
+    width: 172.67px;
+    height: 23px;
+}
+
+.group-button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 14px;
+    left: 56px;
+    width: 194px;
+    height: 43px;
+}

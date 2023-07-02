@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}">
+</head>
+<body>
+    <h1>Login</h1>
+	<form action="/login" method="POST">
+		<label for="email">Email:</label><br>
+		<input type="email" id="email" name="email" required><br>
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password" required>
+        <br>
+        <div>
+            {% if msg|length > 0 %}
+            <p id="msg" style="color:red">{{ msg }}</p>
+            {% endif %}
+            <p>Forgot your password? <a href="/enter_email">Reset Password</a></p>
+        </div>
+		<input type="submit" value="Login" >
+	</form>
+    <div>
+        <p>New User ? <a href="/register"> Register</a></p>
+    </div>
+
+    <script>
+        function showMessage(message, duration) {
+		var messageElement = document.getElementById("msg");
+        if(messageElement!=null){
+            messageElement.innerHTML = message;
+            messageElement.style.display = "block";
+            setTimeout(function() {
+                messageElement.style.display = "none";
+            }, duration);
+        }
+        }
+		var message = "{{msg}}";
+		showMessage(message, 5000);
+    </script>
+
+
+</body>
+</html>

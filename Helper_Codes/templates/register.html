@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+</head>
+<body>
+    <h1>Register</h1>
+	<form action="/register" , method="POST">
+		<label for="username">Username:</label><br>
+		<input type="text" id="username" name="username" required><br>
+
+		<label for="email">Email:</label><br>
+		<input type="email" id="email" name="email" required><br>
+
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password" required><br>
+
+		<label for="confirm-password">Confirm Password:</label><br>
+		<input type="password" id="confirm-password" name="confirm-password" required><br>
+
+		<label for="phone-number">Phone Number:</label><br>
+		<input type="text" pattern="[6789][0-9]{9}" id="phone-number" name="phone-number" required>
+        <br>
+		{% if msg|length > 0 %}
+			<p>{{msg}}</p>
+		{% endif %}
+        <br>
+		<input type="submit" value="Register">
+        <p></p>
+	</form>
+</body>
+</html>

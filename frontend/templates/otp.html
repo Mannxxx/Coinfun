@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/otp.css')}}" >
+</head>
+<body>
+    <form method="POST" action="/otp_verification">
+        <label for="otp">Enter the OTP:</label>
+        <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+        <button id="verify-otp-btn" type="submit">Verify OTP</button>
+    </form>
+    <button id="resend-otp-btn" onclick="window.location.href='/resend_otp';">Resend OTP</button>
+    {% if msg|length > 0 %}
+        <h2 style="">{{msg}}</h2>
+    {% endif %}
+</body>
+
+<script>
+    function showMessage(message, duration) {
+        var messageElement = document.getElementById("msg");
+        messageElement.innerHTML = message;
+        messageElement.style.display = "block";
+        setTimeout(function() {
+            messageElement.style.display = "none";
+        }, duration);
+        }
+    var message = "{{msg}}";
+    showMessage(message, 5000);
+</script>
+
+</html>

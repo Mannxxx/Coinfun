@@ -1,0 +1,66 @@
+[
+  {
+    "symbol": "BTC/USDT",
+    "last_price": 28940.0,
+    "24h_change": 1.33,
+    "24h_high": 29138.0,
+    "24h_low": 28546.57,
+    "24h_turnover": 119909241.35664427
+  },
+  {
+    "symbol": "ETH/USDT",
+    "last_price": 1918.8,
+    "24h_change": 2.02,
+    "24h_high": 1933.39,
+    "24h_low": 1876.1,
+    "24h_turnover": 108041777.0955414
+  },
+  {
+    "symbol": "BNB/USDT",
+    "last_price": 324.0167,
+    "24h_change": 1.21,
+    "24h_high": 325.4079,
+    "24h_low": 319.7056,
+    "24h_turnover": 1137893.59185884
+  },
+  {
+    "symbol": "DOGE/USDT",
+    "last_price": 0.07716,
+    "24h_change": 0.99,
+    "24h_high": 0.07749,
+    "24h_low": 0.07638,
+    "24h_turnover": 2285394.564652
+  },
+  {
+    "symbol": "XRP/USDT",
+    "last_price": 0.4575,
+    "24h_change": 0.64,
+    "24h_high": 0.46,
+    "24h_low": 0.4538,
+    "24h_turnover": 10658435.389499
+  },
+  {
+    "symbol": "MATIC/USDT",
+    "last_price": 0.9748,
+    "24h_change": 2.18,
+    "24h_high": 0.9879,
+    "24h_low": 0.9516,
+    "24h_turnover": 3145149.992057
+  },
+  {
+    "symbol": "ADA/USDT",
+    "last_price": 0.3805,
+    "24h_change": 0.98,
+    "24h_high": 0.3833,
+    "24h_low": 0.3754,
+    "24h_turnover": 2428240.102351
+  },
+  {
+    "symbol": "SOL/USDT",
+    "last_price": 22.41,
+    "24h_change": 2.99,
+    "24h_high": 22.54,
+    "24h_low": 21.71,
+    "24h_turnover": 6182239.14993
+  }
+]

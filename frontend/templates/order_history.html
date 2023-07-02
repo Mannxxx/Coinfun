@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}
+order-history
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/order_history.css')}}"
+{% endblock link %}
+
+{%block body %}
+
+    <div class="order-history">
+      {% if history|length > 0 %}
+        <button class="rectangle-parent1" autofocus>
+          <div class="group-child1"></div>
+          <div class="your-order-history">Your Order History</div>
+        </button>
+        <table>
+          <thead>
+            <tr>
+              <th>Date/Time</th>
+              <th>Order Type</th>
+              <th>Crypto</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th>Net Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for history in history %}
+              <tr>
+                <td>{{history['timestamp']}}</td>
+                <td>{{history['order_type']}}</td>
+                <td>{{history['crypto_name']}}</td>
+                <td>{{history['crypto_amount']}}</td>
+                <td>{{history['crypto_price']}}</td>
+                <td>{{history['net_usdt']}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <h1 class="msg">{{msg}}</h1>
+      {% endif %}
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var groupButton = document.getElementById("dashboard");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          window.location.href = "/dashboard";
+          // Please sync "All Cryptos" to the project
+        });
+      }
+      
+      var groupButton1 = document.getElementById("logout");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          window.location.href = "/";
+          // Please sync "P2P Buy" to the project
+        });
+      }
+      
+      var groupContainer = document.getElementById("p2p_buy");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "/p2p_buy";
+        });
+      }
+      
+      var groupButton2 = document.getElementById("market");
+      if (groupButton2) {
+        groupButton2.addEventListener("click", function (e) {
+          // Please sync "dashboard" to the project
+          window.location.href = "/market_allcrypto";
+        });
+      }
+      </script>
+ 
+ {% endblock body %}

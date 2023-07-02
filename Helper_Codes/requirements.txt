@@ -1,0 +1,14 @@
+Flask
+mysql-connector-python==8.0.33
+flask==2.2.3
+mysqlclient==2.1.1
+google-cloud-vision
+google-cloud-vision==3.4.1
+pytest-cov==4.0.0
+coverage==7.2.3
+matplotlib==3.7.1
+pandas
+pandas==2.0.0
+numpy==1.24.2
+ccxt
+ccxt==3.0.66

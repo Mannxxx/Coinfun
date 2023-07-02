@@ -1,0 +1,4 @@
+About Shiba Inu (SHIB)
+Shiba Inu (SHIB) is an altcoin launched in 2020 on the Ethereum blockchain by an anonymous individual or group known only as Ryoshi. Altcoins are generally defined as any token or coin besides Bitcoin.
+Shiba Inu is completely community-run and was called the “Dogecoin Killer” when it was first released. While both Shiba Inu and Dogecoin were launched as memecoins, they have since made a splash in the cryptocurrency world and begun developing utility for decentralized protocols and the wider crypto community.
+Shiba Inu’s native cryptocurrency, SHIB, is an ERC-20 token. After the Ethereum Merge, transactions on the Shiba Inu network are now validated using a proof-of-stake (PoS) consensus mechanism. The SHIBArmy is a community of SHIB holders and supporters whose members are encouraged to give guidance to the community. The live price of Shiba Inu coin (SHIB) is updated and available in real time on Binance.

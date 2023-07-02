@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link rel="stylesheet" href="/static/css/market_allcrypto.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="all-cryptos">
+      <div class="all-cryptos-child"></div>
+      <div class="rectangle-parent">
+        <div class="group-child"></div>
+        <div class="market">Market</div>
+      </div>
+      <button class="rectangle-group" autofocus id="groupButton">
+        <div class="group-item"></div>
+        <div class="p2p">P2P</div>
+      </button>
+      <div class="rectangle-container" id="groupContainer1">
+        <div class="group-inner"></div>
+        <div class="logout">Logout</div>
+      </div>
+      <button class="group-button" autofocus id="groupButton1">
+        <div class="rectangle-div"></div>
+        <div class="dashboard">Dashboard</div>
+      </button>
+      <div class="group-parent">
+        <div class="group-div">
+          <div class="group-child1"></div>
+          <b class="name">Name</b><b class="h-volume">24h Volume</b
+          ><b class="market-cap">Market Cap</b><b class="h-change">24h Change</b
+          ><b class="price">Price</b>
+        </div>
+        <div class="rectangle-parent1">
+          <div class="group-child2"></div>
+          <b class="m">$4,67,569M</b><b class="b">$24,204.85</b
+          ><b class="b1">+9.31</b><b class="m1">47,553M</b>
+          <div class="image-3-parent" id="groupContainer3">
+            <img class="image-3-icon" alt="" src="/static/images/bitcoin.png" /><b
+              class="btc"
+              >BTC</b
+            ><img class="group-icon" alt="" src="/static/images/non_fav.png" /><b
+              class="bitcoin"
+              >Bitcoin</b
+            >
+          </div>
+        </div>
+        <div class="rectangle-parent2">
+          <div class="group-child2"></div>
+          <b class="b2">$1,664.73</b><b class="b3">+4.98</b
+          ><b class="m1">14,127.5M</b>
+          <div class="eth-parent">
+            <b class="eth">ETH</b
+            ><img
+              class="image-4-icon"
+              alt=""
+              src="/static/images/etherum.png"
+            /><img class="star-icon" alt="" src="/static/images/non_fav.png" /><b
+              class="etherum"
+              >Etherum</b
+            >
+          </div>
+          <b class="m3">$2,03,755.4M</b>
+        </div>
+        <div class="rectangle-parent3">
+          <div class="group-child4"></div>
+          <b class="b4">$303.75</b><b class="m4">784.23M</b
+          ><b class="m5">$47,951.20M</b><b class="b5">+1.3</b>
+          <div class="bnb-parent">
+            <b class="bnb">BNB</b
+            ><img
+              class="image-5-icon"
+              alt=""
+              src="/static/images/BNB.png"
+            /><img class="group-child5" alt="" src="/static/images/non_fav.png" /><b
+              class="bnb1"
+              >BNB</b
+            >
+          </div>
+        </div>
+        <div class="rectangle-parent4">
+          <div class="group-child6"></div>
+          <b class="b6">$1.0</b><b class="b7">-0.13</b><b class="m6">68,536M</b
+          ><b class="m7">$72,899M</b>
+          <div class="xrp-parent">
+            <b class="xrp">XRP</b
+            ><img
+              class="image-7-icon"
+              alt=""
+              src="/static/images/polygon.png"
+            /><img class="group-child7" alt="" src="/static/images/fav.png" /><b
+              class="ripple"
+              >Polygon</b
+            >
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-parent5">
+        <div class="group-child8"></div>
+        <div class="markets-overview">Markets OverView</div>
+      </div>
+      <div class="all-cryptos-inner" id="groupContainer14">
+        <div class="rectangle-parent6">
+          <div class="group-child9"></div>
+          <img class="image-6-icon" alt="" src="/static/images/fav.png" />
+          <div class="favorites">Favorites</div>
+        </div>
+      </div>
+      <div class="all-cryptos-inner1">
+        <div class="rectangle-parent7">
+          <div class="group-child10"></div>
+          <div class="all-cryptos1">All Cryptos</div>
+        </div>
+      </div>
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var groupButton = document.getElementById("groupButton");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          window.location.href = "./p2-p-buy.html";
+        });
+      }
+      
+      var groupContainer1 = document.getElementById("groupContainer1");
+      if (groupContainer1) {
+        groupContainer1.addEventListener("click", function (e) {
+          window.location.href = "./frame-1.html";
+        });
+      }
+      
+      var groupButton1 = document.getElementById("groupButton1");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          // Please sync "dashboard" to the project
+        });
+      }
+      
+      var groupContainer3 = document.getElementById("groupContainer3");
+      if (groupContainer3) {
+        groupContainer3.addEventListener("click", function (e) {
+          // Please sync "BTC Graph" to the project
+        });
+      }
+      
+      var groupContainer14 = document.getElementById("groupContainer14");
+      if (groupContainer14) {
+        groupContainer14.addEventListener("click", function (e) {
+          // Please sync "Favourites" to the project
+        });
+      }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+.group-child2 {
+  position: absolute;
+  top: 69px;
+  left: 0;
+  border-radius: var(--br-11xl) var(--br-11xl) 0 0;
+  background-color: var(--color-white);
+  width: 409px;
+  height: 656.62px;
+}
+.log-in {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 72.89px;
+  font-size: inherit;
+  font-weight: 900;
+  font-family: inherit;
+  display: inline-block;
+  width: 122.15px;
+  height: 37.93px;
+}
+.dont-have-an {
+  font-weight: 300;
+}
+.sign-up {
+  font-weight: 500;
+  color: var(--color-royalblue);
+}
+.dont-have-an-container {
+  position: absolute;
+  top: 520.84px;
+  left: 95.98px;
+  display: inline-block;
+  width: 169.05px;
+  height: 11.74px;
+  cursor: pointer;
+}
+.email-id,
+.password {
+  position: absolute;
+  top: 239.05px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  font-weight: 500;
+  display: inline-block;
+  width: 75.26px;
+  height: 16.26px;
+}
+.password {
+  top: 310.4px;
+  width: 73.07px;
+}
+.forgot-password,
+.remember-me {
+  position: absolute;
+  top: 378.14px;
+  left: 19.63px;
+  color: #555;
+  display: inline-block;
+  width: 75.26px;
+  height: 11.74px;
+}
+.forgot-password {
+  left: 249.76px;
+  color: #1f63ff;
+  width: 100.34px;
+  cursor: pointer;
+}
+.rectangle-input {
+  border: 1px solid var(--color-gray-100);
+  background-color: var(--color-gainsboro-100);
+  top: 258.01px;
+  border-radius: var(--br-5xs);
+  box-sizing: border-box;
+}
+.group-child3,
+.rectangle-button,
+.rectangle-input {
+  position: absolute;
+  left: 0;
+  width: 349.01px;
+  height: 36.13px;
+}
+.group-child3 {
+  top: 329.36px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gainsboro-100);
+  border: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+}
+.rectangle-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-royalblue);
+  top: 414.26px;
+  border-radius: 10px;
+}
+.login {
+  position: absolute;
+  top: 424.2px;
+  left: 143.97px;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--color-white);
+  display: inline-block;
+  width: 43.63px;
+  height: 16.26px;
+}
+.group-child4 {
+  position: absolute;
+  top: 378.14px;
+  left: 0;
+  border-radius: 2px;
+  background-color: var(--color-royalblue);
+  width: 14.18px;
+  height: 11.74px;
+}
+.vector-icon {
+  position: absolute;
+  top: 381.36px;
+  left: 1.8px;
+  width: 9.42px;
+  height: 6.05px;
+}
+.enter-password,
+.enter-your-email {
+  position: absolute;
+  top: 269.75px;
+  left: 19.63px;
+  font-size: var(--font-size-smi);
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  color: var(--color-gray-200);
+  display: inline-block;
+  width: 200px;
+  height: 13.55px;
+}
+.enter-password {
+  top: 340.2px;
+  width: 138.51px;
+}
+.trip-icon {
+  position: absolute;
+  top: 0;
+  left: 15.95px;
+  width: 318.64px;
+  height: 230.66px;
+  object-fit: cover;
+}
+.group-child5 {
+  position: absolute;
+  height: 2.01%;
+  width: 10.04%;
+  top: 64.65%;
+  right: 4.29%;
+  bottom: 33.33%;
+  left: 85.67%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dont-have-an-account-sign-u-parent {
+  position: absolute;
+  top: 115px;
+  left: 29px;
+  width: 350.1px;
+  height: 532.58px;
+  font-size: var(--font-size-2xs);
+  color: var(--color-black);
+}
+.group-child6 {
+  position: absolute;
+  height: 2.46%;
+  width: 6.14%;
+  top: 1.3%;
+  right: 89.89%;
+  bottom: 96.24%;
+  left: 3.98%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.rectangle-parent2 {
+  position: absolute;
+  top: 7px;
+  left: 163px;
+  width: 409px;
+  height: 725.62px;
+}
+.iphone-11-pro-x-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
+  background-color: var(--color-royalblue);
+  box-shadow: 0 4px 70px rgba(0, 0, 0, 0.21);
+  width: 755px;
+  height: 803px;
+  overflow: hidden;
+}
+.iphone-11-pro-x-3-parent {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 803px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 36px;
+  color: var(--color-white);
+  font-family: var(--font-roboto);
+}

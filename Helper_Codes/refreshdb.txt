@@ -1,0 +1,49 @@
+DROP DATABASE Coinfun_database;
+CREATE DATABASE Coinfun_database;
+USE Coinfun_database;
+
+CREATE TABLE userinfo (
+ email_id VARCHAR(50) NOT NULL PRIMARY KEY,
+ username VARCHAR(50) NOT NULL,
+ password VARCHAR(255) NOT NULL,
+ wallet JSON NOT NULL,
+ favourites TEXT,
+ profile_pic MEDIUMBLOB,
+ kyc BOOLEAN NOT NULL DEFAULT 0,
+ contact VARCHAR(20) NULL
+);
+
+CREATE TABLE chat (
+ email_id1 VARCHAR(50),
+ email_id2 VARCHAR(50),
+ chat_messages JSON,
+ PRIMARY KEY (email_id1, email_id2)
+);
+
+CREATE TABLE P2PTradeData (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ buyer_email_id VARCHAR(50) NOT NULL,
+ seller_email_id VARCHAR(50) NOT NULL,
+ transaction_usdt DOUBLE NOT NULL,
+ price DOUBLE NOT NULL,
+ time_stamp DATETIME NOT NULL,
+ PRIMARY KEY (order_id)
+);
+
+CREATE TABLE transaction_history (
+ email_id VARCHAR(50) NOT NULL,
+ orders JSON NOT NULL,
+ PRIMARY KEY (email_id),
+ FOREIGN KEY (email_id) REFERENCES userinfo(email_id)
+);
+
+CREATE TABLE P2PBiddingData (
+ email_id VARCHAR(50) NOT NULL,
+ buy_type BOOLEAN NOT NULL,
+ transaction_usdt DOUBLE NOT NULL DEFAULT 0,
+ price DOUBLE NOT NULL DEFAULT 0,
+ payment_method VARCHAR(50) NOT NULL,
+ lower_limit DOUBLE NOT NULL,
+ upper_limit DOUBLE NOT NULL,
+ FOREIGN KEY (email_id) REFERENCES userinfo(email_id)
+);

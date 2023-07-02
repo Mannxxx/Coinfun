@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>P2P Sell</title>
+    <meta name="description" content="p2p-sell" />
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link rel="stylesheet" href="/static/css/p2p_sell.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="p2p-sell">
+      <div class="p2p-sell-child"></div>
+      <button class="rectangle-parent" autofocus id="groupButton">
+        <div class="group-child"></div>
+        <div class="market">Market</div>
+      </button>
+      <div class="rectangle-group">
+        <div class="group-item"></div>
+        <div class="p2p">P2P</div>
+      </div>
+      <div class="rectangle-container" id="groupContainer1">
+        <div class="group-inner"></div>
+        <div class="logout">Logout</div>
+      </div>
+      <button class="group-button" autofocus id="groupButton1">
+        <div class="rectangle-div"></div>
+        <div class="dashboard">Dashboard</div></button
+      ><button class="buy-wrapper" autofocus id="frameButton">
+        <div class="buy">Buy</div>
+      </button>
+      <div class="group-div">
+        <div class="group-child1"></div>
+        <div class="p2p1">P2P</div>
+      </div>
+      <div class="rectangle-parent1">
+        <div class="group-child2"></div>
+        <div class="sell">Sell</div>
+      </div>
+      <div class="group-parent">
+        <div class="group-wrapper">
+          <div class="rectangle-parent2">
+            <div class="group-child3"></div>
+            <b class="advertiser">Advertiser</b><b class="payment">Payment</b
+            ><b class="trade">Trade</b><b class="fee">0fee</b
+            ><b class="limitavailable">Limit/Available</b
+            ><b class="price">Price</b>
+          </div>
+        </div>
+        <div class="group-container">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">88.90 INR</b>
+            <div class="available-parent">
+              <b class="available">Available:</b><b class="usdt">8.30 USDT</b>
+            </div>
+            <b class="imps">IMPS</b>
+            <div class="rs-parent">
+              <b class="rs">100-850 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="growth-more-wrapper">
+              <b class="growth-more">Growth_more</b>
+            </div>
+          </div>
+          <div class="rectangle-parent4">
+            <div class="group-child5"></div>
+            <b class="sell-usdt">Sell USDT</b>
+          </div>
+        </div>
+        <div class="group-parent1">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">88.15 INR</b>
+            <div class="available-group">
+              <b class="available">Available:</b><b class="usdt">534.85 USDT</b>
+            </div>
+            <b class="imps">UPI</b>
+            <div class="rs-group">
+              <b class="rs">47,000-47,304 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="growth-more-wrapper">
+              <b class="growth-more">Richa</b>
+            </div>
+          </div>
+          <div class="rectangle-parent4">
+            <div class="group-child7"></div>
+            <b class="sell-usdt">Sell USDT</b>
+          </div>
+        </div>
+        <div class="group-parent2">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">87.90 INR</b>
+            <div class="available-group">
+              <b class="available">Available:</b><b class="usdt">899.00 USDT</b>
+            </div>
+            <b class="imps">IMPS</b>
+            <div class="rs-group">
+              <b class="rs">79,900-79,921 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="growth-more-wrapper">
+              <b class="growth-more">Vikash</b>
+            </div>
+          </div>
+          <div class="rectangle-parent8" id="groupContainer22">
+            <div class="group-child7"></div>
+            <b class="sell-usdt">Sell USDT</b>
+          </div>
+        </div>
+      </div>
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var groupButton = document.getElementById("logout");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          window.location.href = "/login";
+          // Please sync "All Cryptos" to the project
+        });
+      }
+      
+      var groupContainer1 = document.getElementById("p2p_buy");
+      if (groupContainer1) {
+        groupContainer1.addEventListener("click", function (e) {
+          // Please sync "login" to the project
+          window.location.href = "./p2p_buy";
+        });
+      }
+      
+      var groupButton1 = document.getElementById("dashboard");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      
+      var frameButton = document.getElementById("market");
+      if (frameButton) {
+        frameButton.addEventListener("click", function (e) {
+          // Please sync "P2P Buy" to the project
+          window.location.href = "/market_allcrypto";
+        });
+      }
+      
+      var groupContainer22 = document.getElementById("groupContainer22");
+      if (groupContainer22) {
+        groupContainer22.addEventListener("click", function (e) {
+          // Please sync "Chat_Vikash_sell" to the project
+        });
+      }
+      </script>
+  </body>
+</html>

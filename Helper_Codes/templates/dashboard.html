@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <title>Dashboard</title>
+  <meta name="description" content="home" />
+  <link rel="stylesheet" href="/static/css/global.css" />
+  <link rel="stylesheet" href="/static/css/dashboard.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" />
+  
+</head>
+</head>
+
+<body>
+  <div class="dashboard2">
+    <div class="dashboard-child"></div>
+    <button class="rectangle-parent19" autofocus id="market">
+      <div class="group-child21"></div>
+      <div class="market2">Market</div>
+    </button><button class="rectangle-parent20" autofocus id="p2p_buy">
+      <div class="group-child22"></div>
+      <div class="p2p3">P2P</div>
+    </button>
+    <button class="rectangle-parent21" id="logout">
+      <div class="group-child23"></div>
+      <div class="logout2">Logout</div>
+    </button>
+    <button class="rectangle-parent22" autofocus id="dashboard">
+      <div class="group-child24"></div>
+      <div class="dashboard3">Dashboard</div>
+    </button><img class="image-1-icon" alt="" src="./public/image-1@2x.png" />
+    <div class="rectangle-parent23">
+      <div class="group-child25"></div>
+      <div class="holdings">Holdings</div>
+    </div>
+    <div class="rectangle-parent24" autofocus>
+      <div class="group-child26"></div>
+      <div class="wallet-overview">Wallet OverView</div>
+    </div>
+    <div class="rectangle-parent25">
+      <button class="rectangle-button" autofocus></button>
+      <div class="estimated-balance">Estimated Balance = 5,450 $</div>
+      <div class="div">~</div>
+    </div>
+    <div class="vikash-container">
+      <div class="vikash1">{{data['username']}}</div>
+    </div>
+    <div class="group-parent4">
+      <!-- <div class="rectangle-parent26">
+          <div class="group-child27"></div>
+          <b class="name2">Name</b
+          ><b class="estimated-balance1">Estimated Balance</b
+          ><b class="price2">Price</b><b class="amount">Amount</b>
+        </div> -->
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Estimated Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="image-3-parent" id="groupContainer4">
+              <img class="image-3-icon" alt="" src="/static/images/bitcoin.png" /><b class="btc">BTC</b><b
+                class="bitcoin">Bitcoin</b>
+            </div></td>
+            <td>10</td>
+            <td>$5.00</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td><div class="eth-group">
+              <b class="eth1">ETH</b><img class="image-4-icon1" alt="" src="/static/images/etherum.png" /><b
+                class="etherum1">Etherum</b>
+            </div></td>
+            <td>5</td>
+            <td>$10.00</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td><div class="bnb-parent">
+              <b class="bnb">BNB</b><img class="image-5-icon" alt="" src="/static/images/BNB.png" /><b class="bnb1">BNB</b>
+            </div></td>
+            <td>8</td>
+            <td>$3.50</td>
+            <td>$28.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <div class="rectangle-parent27">
+        <div class="group-child28"></div>
+        <b class="b4">0.2</b><b class="b5">22000 $</b><b class="b6">4400 $</b>
+        <div class="image-3-parent" id="groupContainer4">
+          <img class="image-3-icon" alt="" src="./public/image-3@2x.png" /><b class="btc">BTC</b><b
+            class="bitcoin">Bitcoin</b>
+        </div>
+      </div>
+      <div class="rectangle-parent28">
+        <div class="group-child28"></div>
+        <b class="b4">0.5</b><b class="b5">1500 $</b><b class="b6">750 $</b>
+        <div class="eth-group">
+          <b class="eth1">ETH</b><img class="image-4-icon1" alt="" src="./public/image-41@2x.png" /><b
+            class="etherum1">Etherum</b>
+        </div>
+      </div>
+      <div class="rectangle-parent29">
+        <div class="group-child28"></div>
+        <b class="b4">1</b><b class="b5">300 $</b><b class="b6">300 $</b>
+        <div class="bnb-parent">
+          <b class="bnb">BNB</b><img class="image-5-icon" alt="" src="./public/image-5@2x.png" /><b class="bnb1">BNB</b>
+        </div>
+      </div> -->
+    </div>
+    <b class="coinfun2">Coinfun</b>
+  </div>
+
+  <script>
+    var groupButton = document.getElementById("market");
+    if (groupButton) {
+      groupButton.addEventListener("click", function (e) {
+        window.location.href = "/market_allcrypto";
+        // Please sync "All Cryptos" to the project
+      });
+    }
+
+    var groupButton1 = document.getElementById("logout");
+    if (groupButton1) {
+      groupButton1.addEventListener("click", function (e) {
+        window.location.href = "/";
+        // Please sync "P2P Buy" to the project
+      });
+    }
+
+    var groupButton = document.getElementById("p2p_buy");
+    if (groupButton) {
+      groupButton.addEventListener("click", function (e) {
+        window.location.href = "/p2p_buy";
+        // Please sync "login" to the project
+      });
+    }
+
+    var groupButton2 = document.getElementById("dashboard");
+    if (groupButton2) {
+      groupButton2.addEventListener("click", function (e) {
+        window.location.href = "/dropdown";
+        // Please sync "Dropdown" to the project
+      });
+    }
+
+
+  </script>
+</body>
+
+</html>

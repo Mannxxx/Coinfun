@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}
+Market-Fav
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/market_fav.css')}}"
+{% endblock link %}
+{%block body %}
+<div class="favourites">
+  <div class="rectangle-parent13">
+    <div class="group-child14"></div>
+    <div class="markets-overview">Markets OverView</div>
+  </div>
+  <div class="favourites-inner">
+    <div class="rectangle-parent14">
+      <div class="group-child15"></div>
+      <img class="image-6-icon" alt="" src="{{url_for('static',filename='images/non_fav.png')}}" />
+      <button  class="favorites" >Favourites</button>
+    </div>
+  </div>
+  <div class="favourites-inner1" id="groupContainer6">
+    <div class="rectangle-parent15">
+      <div class="group-child16"></div>
+      <!-- <div class="all-cryptos1">All Cryptos</div> -->
+      <a href="/market_allcrypto" type="button" class="all-cryptos1" >All Cryptos</a>
+    </div>
+  </div>
+  {% if jsondata|length > 0 %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>24h Change</th>
+          <th>24h High</th>
+          <th>24h Low</th>
+          <th>24h Turnover</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data  in jsondata %}
+        <tr>
+          <td>{{data['symbol']}}</td>
+          <td>{{data['last_price']}}</td>
+          <td>{{data['24h_change']}}</td>
+          <td>{{data['24h_high']}}</td>
+          <td>{{data['24h_low']}}</td>
+          <td>{{data['24h_turnover']}}</td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  {%else %}
+    <h1>{{msg}}</h1>
+  {% endif %}
+  
+  
+  <b class="coinfun1">Coinfun</b>
+</div>
+
+<script>
+  var groupButton = document.getElementById("logout");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      // Please sync "P2P Buy" to the project
+      window.location.href = "/";
+    });
+  }
+
+  var groupContainer1 = document.getElementById("dashboard");
+  if (groupContainer1) {
+    groupContainer1.addEventListener("click", function (e) {
+      window.location.href = "/dashboard";
+      // Please sync "login" to the project
+    });
+  }
+
+  var groupButton1 = document.getElementById("p2p_buy");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      window.location.href = "/p2p_buy";
+    });
+  }
+  var groupButton1 = document.getElementById("market");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      window.location.href = "/market_allcrypto";
+    });
+  }
+
+
+</script>
+
+{% endblock body %}

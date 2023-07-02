@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-ubuntu: Ubuntu;
+    --font-fira-code: "Fira Code";
+    --font-roboto: Roboto;
+  
+    /* font sizes */
+    --font-size-45xl: 64px;
+    --font-size-xs: 12px;
+    --font-size-xl: 20px;
+    --font-size-13xl: 32px;
+    --font-size-sm: 14px;
+    --font-size-5xl: 24px;
+  
+    /* Colors */
+    --color-goldenrod: #f3ba2f;
+    --table-background: #fff;
+    --color-firebrick-100: #cd3740;
+    --color-gray-100: rgba(255, 255, 255, 0);
+    --color-gray-200: rgba(0, 0, 0, 0.4);
+    --color-gray-300: rgba(0, 0, 0, 0.64);
+    --color-gray-400: rgba(0, 0, 0, 0.44);
+    --color-gray-500: rgba(0, 0, 0, 0.62);
+    --color-gray-600: rgba(255, 255, 255, 0.63);
+    --color-gray-700: rgba(255, 255, 255, 0.62);
+    --color-mediumseagreen: #1bd49c;
+    --color-black: #000;
+    --color-yellow-100: #ffff00;
+    --color-yellow-200: #e8e823;
+    --table-border: #b9b9b9;
+    --color-slateblue: rgba(99, 59, 188, 0.81);
+    --color-gainsboro-100: #d9d9d9;
+  
+    /* Paddings */
+    --padding-6xs: 7px;
+    --padding-5xs: 8px;
+  
+    /* border radiuses */
+    --br-xs-9: 11.9px;
+    --br-2xl: 21px;
+    --br-2xl-5: 21.5px;
+    --br-base: 16px;
+    --br-lgi-5: 19.5px;
+  }
+  

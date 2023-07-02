@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="/static/css/user_profile.css" />
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="user-profile">
+      <div class="user-profile-child"></div>
+      <button class="rectangle-parent" autofocus id="groupButton">
+        <button class="group-child" autofocus id="rectangleButton"></button>
+        <div class="market">Market</div></button
+      ><button class="rectangle-group" autofocus id="groupButton1">
+        <div class="group-item"></div>
+        <div class="p2p">P2P</div>
+      </button>
+      <div class="rectangle-container" id="groupContainer">
+        <div class="group-inner"></div>
+        <div class="logout">Logout</div>
+      </div>
+      <button class="group-button" autofocus id="groupButton2">
+        <div class="rectangle-div"></div>
+        <div class="dashboard">Dashboard</div>
+      </button>
+      <div class="group-parent">
+        <div class="username-wrapper">
+          <div class="username">Username :</div>
+        </div>
+        <div class="vikash-meena">Vikash Meena</div>
+      </div>
+      <div class="group-container">
+        <div class="email-wrapper"><div class="username">Email :</div></div>
+        <div class="vikashmeena9782gmailcom">vikashmeena9782@gmail.com</div>
+      </div>
+      <div class="group-div">
+        <div class="email-wrapper"><div class="username">Contact :</div></div>
+        <div class="vikash-meena">9090909090</div>
+      </div>
+      <div class="group-parent1">
+        <div class="status-wrapper"><div class="username">Status :</div></div>
+        <div class="verified">Verified</div>
+      </div>
+      <img class="image-2-icon" alt="" src="./public/image-2@2x.png" />
+      <div class="rectangle-parent1">
+        <div class="group-child1"></div>
+        <div class="change-photo">Change Photo</div>
+      </div>
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var rectangleButton = document.getElementById("rectangleButton");
+      if (rectangleButton) {
+        rectangleButton.addEventListener("click", function (e) {
+          // Please sync "All Cryptos" to the project
+        });
+      }
+      
+      var groupButton = document.getElementById("groupButton");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          // Please sync "All Cryptos" to the project
+        });
+      }
+      
+      var groupButton1 = document.getElementById("groupButton1");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          // Please sync "P2P Buy" to the project
+        });
+      }
+      
+      var groupContainer = document.getElementById("groupContainer");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "./frame-1.html";
+        });
+      }
+      
+      var groupButton2 = document.getElementById("groupButton2");
+      if (groupButton2) {
+        groupButton2.addEventListener("click", function (e) {
+          // Please sync "dashboard" to the project
+        });
+      }
+      </script>
+  </body>
+</html>

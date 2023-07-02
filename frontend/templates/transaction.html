@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}
+transcation-history
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/transaction.css')}}"
+{% endblock link %}
+
+{%block body %}
+
+
+<div class="transcation-history">
+
+  <button class="rectangle-parent34" autofocus>
+    <button class="group-child35"></button>
+    <div class="your-transaction-history">Your Transaction History</div>
+  </button>
+
+  {% if msg|length > 0 %}
+    <h1 class="msg">{{msg}}</h1>
+  {% else %}
+    <!-- <h2 class="my-heading" style="color: black;position:absolute; top: 400px; left:500px;">Vikash </h2> -->
+  <table>
+    <thead>
+      <tr>
+        <th>Date/Time</th>
+        <th>Order Id</th>
+        <th>Order Type</th>
+        <th>Client</th>
+        <th>Amount (USDT)</th>
+        <th>Price</th>
+        <th>Net Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rows in data%}
+        <tr>
+          <td>{{rows['time_stamp']}}</td>
+          <td>{{rows['order_id']}}</td>
+          <td>{{rows['order_type']}}</td>
+          <td>{{rows['client'][0]}} <br>{{rows['client'][1]}}</td>
+          <td>{{rows['transaction_usdt']}}</td>
+          <td>{{rows['price']}}</td>
+          <td>{{rows['net_usdt']}}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  {% endif %}
+  
+
+
+  <b class="coinfun3">Coinfun</b>
+</div>
+
+<script>
+  var groupButton = document.getElementById("logout");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      // Please sync "All Cryptos" to the project
+      window.location.href = "/";
+    });
+  }
+
+  var groupButton1 = document.getElementById("p2p_buy");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      // Please sync "P2P Buy" to the project
+      window.location.href = "/p2p_buy";
+    });
+  }
+
+  var groupContainer = document.getElementById("market");
+  if (groupContainer) {
+    groupContainer.addEventListener("click", function (e) {
+      // Please sync "login" to the project
+      window.location.href = "/market_allcrypto";
+    });
+  }
+
+  var groupButton2 = document.getElementById("dashboard");
+  if (groupButton2) {
+    groupButton2.addEventListener("click", function (e) {
+      window.location.href = "/dashboard";
+    });
+  }
+</script>
+{% endblock body %}

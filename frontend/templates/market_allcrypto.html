@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/global.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/market_allcrypto.css')}}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="all-cryptos">
+      <div class="all-cryptos-child"></div>
+      <div class="rectangle-parent" autofocus id="market">
+        <div class="group-child"></div>
+        <div class="market">Market</div>
+      </div>
+      <button class="rectangle-group" autofocus id="p2p_buy">
+        <div class="group-item"></div>
+        <div class="p2p">P2P</div>
+      </button>
+      <div class="rectangle-container" id="logout">
+        <div class="group-inner"></div>
+        <div class="logout">Logout</div>
+      </div>
+      <button class="group-button" autofocus id="dashboard">
+        <div class="rectangle-div"></div>
+        <div class="dashboard">Dashboard</div>
+      </button>
+      {% if jsondata|length > 0 %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>24h Change</th>
+            <th>24h Low</th>
+            <th>24h High</th>
+            <th>24h Turnover</th>
+            <th>Favourites</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for data in jsondata %}
+        <tr>
+          <td>
+            <a href="/trade_page/{{data['symbol']}}/1m"  type="text" style="color: yellow;;" >{{data['symbol']}}</a> 
+          </td>
+          <td style="color:white">{{data['24h_change']}}</td>
+          <td style="color:white">{{data['last_price']}}</td>
+          <td style="color:white">{{data['24h_low']}}</td>
+          <td style="color:white">{{data['24h_high']}}</td>
+          <td style="color:white">{{data['24h_turnover']}}</td>
+          {% if data['fav_crypto'] %}
+            <td>
+              <!-- <button type="button" class="btn btn-outline-success" , style="background-color:rgb(0, 187, 255); font-size: 20px;" onclick="location.href='{{url_for('user_profile')}}'">UnMark Favourite</button> -->
+              <a href="/mark_unfav/{{data['symbol']}}" type="button" style="color: skyblue;"  class="btn btn-outline-dark btn-sm mx-1">Mark Unfavourite</a>
+            </td>
+          {% else %}
+            <td>
+              <a href="/mark_fav/{{data['symbol']}}" type="button" style="color: skyblue;"   class="btn btn-outline-dark btn-sm mx-1">Mark Favourite</a>
+            </td>
+          {% endif %}
+        
+      </tr>
+      {% endfor %}
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    {% endif %}
+
+      
+       
+      
+      <div class="rectangle-parent5">
+        <div class="group-child8"></div>
+        <div class="markets-overview">Markets OverView</div>
+      </div>
+      <div class="all-cryptos-inner" id="favorites" >
+        <div class="rectangle-parent6">
+          <div class="group-child9" ></div>
+          <img class="image-6-icon" alt="" src="{{url_for('static',filename='images/non_fav.png')}}" />
+          <!-- <div class="favorites">Favorites</div> -->
+          <a href="/market_fav" type="button" class="favorites" >Favourites</a>
+        </div>
+      </div>
+      <div class="all-cryptos-inner1">
+        <div class="rectangle-parent7">
+          <div class="group-child10"></div>
+          <!-- <div class="all-cryptos1">All Cryptos</div> -->
+          <a href="/market_allcrypto" type="button" class="all-cryptos1" >All Cryptos</a>
+
+        </div>
+      </div>
+      <!-- <a href="/market_fav" type="button" class="all-cryptos-inner1" >All Cryptos</a> -->
+
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var groupButton = document.getElementById("p2p_buy");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          window.location.href = "/p2p_buy";
+        });
+      }
+      
+      
+      
+      var groupButton1 = document.getElementById("favorites");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          window.location.href = "/market_fav";
+
+          // Please sync "dashboard" to the project
+        });
+      }
+      
+      var groupContainer3 = document.getElementById("dashboard");
+      if (groupContainer3) {
+        groupContainer3.addEventListener("click", function (e) {
+          // Please sync "BTC Graph" to the project
+          window.location.href = "/dashboard";
+        });
+      }
+      
+      var groupContainer14 = document.getElementById("logout");
+      if (groupContainer14) {
+        groupContainer14.addEventListener("click", function (e) {
+          window.location.href = "/";
+          // Please sync "Favourites" to the project
+        });
+      }
+     
+      
+      </script>
+  </body>
+</html>

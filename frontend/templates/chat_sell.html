@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat Sell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .chat {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            max-width: 100%;
+        }
+
+        .message.sent {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .message .meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .message .text {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 10px;
+            line-height: 1.4;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .form input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form input[type="submit"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .header input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .header button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #007bff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span>selling to :</span>
+        <span>
+            <button onclick="window.location.href='/p2p_sell';"> << BACK TO P2P PORTAL</button>
+        </span>
+        <span> {{data['username']}}</span>
+        <form class = "form" method="POST" action="/release/{{mail_id}}">
+            <input type="number" id="amount" name="amount"  placeholder="Quantity" required>
+            <button type="submit">Release</button>
+        </form>
+    </div>
+    <div class="chat" id="chat">
+        {% if data['data']|length == 0 %}
+            <div class="message">
+                <div class="meta"></div>
+                <div class="text">No messages yet</div>
+            </div>
+        {% else %}
+            {% for rows in data['data'] %}
+                {% if data['my_mail']== rows['sender'] %}
+                    <div class="message sent">
+                        <div class="meta"></div>
+                        <div class="text">{{rows['message']}}</div>
+                    </div>
+                {% else %}
+                    <div class="message">
+                        <div class="meta"></div>
+                        <div class="text">{{rows['message']}}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <!-- {% for rows in data['data'] %}
+            {% if data['my_mail']== rows['sender'] %}
+                <div class="message sent">
+                    <div class="meta"></div>
+                    <div class="text">{{rows['message']}}</div>
+                </div>
+            {% else %}
+                <div class="message">
+                    <div class="meta"></div>
+                    <div class="text">{{rows['message']}}</div>
+                </div>
+            {% endif %}
+        {% endfor %} -->
+        <!-- <div class="message">
+            <div class="meta"></div>
+            <div class="text">Hi there, how are you doing?</div>
+        </div> -->
+        <!-- <div class="message sent">
+            <div class="meta"></div>
+            <div class="text">I'm good, thanks for asking. How about you?</div>
+        </div> -->
+        <!-- Add more chat messages here -->
+    </div>
+    <form class="form" method="POST" action="/chat_sell/{{mail_id}}">
+        <input type="text" id="messageInput" name="messageInput" placeholder="Type your message here..." required>
+        <input type="submit" value="Send">
+    </form>
+
+</body>
+</html>

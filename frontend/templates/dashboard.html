@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashbaord
+{% endblock title %}
+
+{% block link %}
+rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}"
+{% endblock link %}
+
+{%block body %}
+
+<div class="dropdown">
+  <button type="button" class="btn-success2" style="border-radius: 10px;width: 200px;height: 30px;font-size: large; background-color: aqua;" onclick="location.href='{{url_for('change_password')}}'">Change Password</button><br><br>
+  <button type="button" class="btn-success3" style="border-radius: 10px;width: 200px;height: 30px;font-size: large; background-color: aqua;" onclick="location.href='{{url_for('order_history')}}'">Order History</button><br><br>
+  <button type="button" class="btn-success4" style="border-radius: 10px;width: 200px;height: 30px;font-size: large; background-color: aqua;" onclick="location.href='{{url_for('transaction')}}'">Transaction History</button><br><br>
+  <button type="button" class="btn-success1" style="border-radius: 10px;width: 200px;height: 30px;font-size: large; background-color: aqua;" onclick="location.href='{{url_for('user_profile')}}'">User Profile</button>
+</div>
+
+<div class="center-align">
+  <div class="dashboard2">
+    <div class="rectangle-parent23">
+      <div class="group-child25"></div>
+      <div class="holdings">Holdings</div>
+    </div>
+    <div class="rectangle-parent24" autofocus>
+      <div class="group-child26"></div>
+      <div class="wallet-overview">Wallet OverView</div>
+    </div>
+    <div class="rectangle-parent25">
+      <button class="rectangle-button" autofocus></button>
+      <div class="estimated-balance" >Estimated Balance = {{data['estimated_balance']}} $</div>
+      <div class="div">~</div>
+    </div>
+    <div class="vikash-container">
+      <div class="vikash1">{{data['username']}}</div>
+    </div>
+    <div class="group-parent4">
+      {% if data['data']|length > 0 %}
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th>Estimated Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for rows in data['data'] %}
+              <tr>
+                <td>
+                  {{rows['symbol']}}
+                </td>
+                <td>{{rows['amount']}}</td>
+                <td>{{rows['price']}} $</td>
+                <td>{{rows['est_balance']}} $</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <h1 style="font-size: 30px; color: yellowgreen;">{{msg}}</h2>
+      {% endif %}
+    
+      
+    </div>
+    <b class="coinfun2">Coinfun</b>
+  </div>
+</div>
+<script>
+  var groupButton = document.getElementById("market");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      window.location.href = "/market_allcrypto";
+      // Please sync "All Cryptos" to the project
+    });
+  }
+
+  var groupButton1 = document.getElementById("logout");
+  if (groupButton1) {
+    groupButton1.addEventListener("click", function (e) {
+      window.location.href = "/";
+      // Please sync "P2P Buy" to the project
+    });
+  }
+
+  var groupButton = document.getElementById("p2p_buy");
+  if (groupButton) {
+    groupButton.addEventListener("click", function (e) {
+      window.location.href = "/p2p_buy";
+      // Please sync "login" to the project
+    });
+  }
+
+  var groupButton2 = document.getElementById("dashboard");
+  if (groupButton2) {
+    groupButton2.addEventListener("click", function (e) {
+      
+      // Please sync "Dropdown" to the project
+    });
+  }
+
+
+</script>
+
+{% endblock body %}

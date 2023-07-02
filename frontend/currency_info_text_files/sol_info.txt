@@ -1,0 +1,6 @@
+About Solana (SOL)
+Solana is an independent Layer 1 blockchain created as a fast and efficient network with an underlying smart contract protocol. Since its launch in 2020, the Solana network has been dubbed a competitor to Ethereum, and even nicknamed ‘The Ethereum Killer’.
+The network’s scalability, combined with its low fees and high speed, makes it a leading choice for many NFT-based decentralized applications (dApps), as well as decentralized finance (DeFi) and digital blockchain-based payment ecosystems.
+The Solana network focuses on high transaction throughput and short processing time, which it achieves via its Proof-of-History (PoH) technology. Solana claims to be able to process 65,000 transactions per second, making it one of the fastest in the industry.
+The Solana blockchain linearly hashes transactions to create a verifiable order of all the network's activity in order to reach the aforementioned speed. Because of this, there's no need to rely on a block creator's timestamp, or for network validators to check the transaction order.
+The Solana network was co-founded in 2017 by systems engineer and computer programmer Anatoly Yakovenko and current Solana COO Raj Gokal.  The network operates on the PoH timing mechanism, which was implemented prior to the consensus layer that now operates on a proof-of-stake (PoS) algorithm.

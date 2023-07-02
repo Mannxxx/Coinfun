@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="/static/css/p2p_buy.css" />
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira Code:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="p2p-buy">
+      <div class="p2p-buy-child"></div>
+      <button class="rectangle-parent" autofocus id="market">
+        <div class="group-child"></div>
+        <div class="market">Market</div>
+      </button>
+      <div class="rectangle-group">
+        <div class="group-item"></div>
+        <div class="p2p">P2P</div>
+      </div>
+      <button class="rectangle-container" autofocus id="logout">
+        <div class="group-inner"></div>
+        <div class="logout">Logout</div>
+      </button>
+      <button class="group-button" autofocus id="dashboard">
+        <div class="rectangle-div"></div>
+        <div class="dashboard">Dashboard</div>
+      </button>
+      <div class="buy-wrapper"><div class="buy">Buy</div></div>
+      <div class="group-div">
+        <div class="group-child1"></div>
+        <div class="p2p1">P2P</div>
+      </div>
+      <button class="rectangle-parent1" autofocus id="button_sell">
+        <div class="group-child2"></div>
+        <div class="sell">Sell</div>
+      </button>
+      <div class="group-parent">
+        <div class="group-wrapper">
+          <div class="rectangle-parent2">
+            <div class="group-child3"></div>
+            <b class="advertiser">Advertiser</b><b class="payment">Payment</b
+            ><b class="trade">Trade</b><b class="fee">0fee</b
+            ><b class="limitavailable">Limit/Available</b
+            ><b class="price">Price</b>
+          </div>
+        </div>
+        <div class="group-38-nat">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">88.80 INR</b>
+            <div class="available-parent">
+              <b class="available">Available:</b><b class="usdt">811.30 USDT</b>
+            </div>
+            <b class="imps">IMPS</b>
+            <div class="rs-parent">
+              <b class="rs">70,000-72,304 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="natalie-wrapper"><b class="natalie">Natalie</b></div>
+          </div>
+          <button class="group-37-richa" autofocus id="groupButton3">
+            <div class="group-37-richa-child"></div>
+            <b class="buy-usdt">Buy USDT</b>
+          </button>
+        </div>
+        <div class="group-container">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">88.85 INR</b>
+            <div class="available-parent">
+              <b class="available">Available:</b><b class="usdt">534.85 USDT</b>
+            </div>
+            <b class="imps">UPI</b>
+            <div class="rs-parent">
+              <b class="rs">47,000-47,304 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="natalie-wrapper"><b class="natalie">Richa</b></div>
+          </div>
+          <button class="group-37-richa" autofocus id="group37Richa">
+            <div class="group-37-richa-child"></div>
+            <b class="buy-usdt">Buy USDT</b>
+          </button>
+        </div>
+        <div class="group-parent1">
+          <div class="rectangle-parent3">
+            <div class="group-child4"></div>
+            <b class="inr">88.90 INR</b>
+            <div class="available-parent">
+              <b class="available">Available:</b><b class="usdt">899.00 USDT</b>
+            </div>
+            <b class="imps">IMPS</b>
+            <div class="rs-parent">
+              <b class="rs">79,900-79,921 Rs</b><b class="limit">Limit:</b>
+            </div>
+            <div class="natalie-wrapper"><b class="natalie">Vikash</b></div>
+          </div>
+          <button class="group-37-richa" autofocus id="group37Vikash">
+            <div class="group-37-richa-child"></div>
+            <b class="buy-usdt">Buy USDT</b>
+          </button>
+        </div>
+      </div>
+      <b class="coinfun">Coinfun</b>
+    </div>
+
+    <script>
+      var groupButton = document.getElementById("p2p_sell");
+      if (groupButton) {
+        groupButton.addEventListener("click", function (e) {
+          window.location.href = "/p2p_sell";
+          // Please sync "All Cryptos" to the project
+        });
+      }
+      
+      var groupContainer1 = document.getElementById("logout");
+      if (groupContainer1) {
+        groupContainer1.addEventListener("click", function (e) {
+          window.location.href = "/login";
+        });
+      }
+      
+      var groupButton1 = document.getElementById("dashbaord");
+      if (groupButton1) {
+        groupButton1.addEventListener("click", function (e) {
+          window.location.href = "/";
+          // Please sync "dashboard" to the project
+        });
+      }
+      
+      var groupButton2 = document.getElementById("market");
+      if (groupButton2) {
+        groupButton2.addEventListener("click", function (e) {
+          window.location.href = "/market_allcrypto";
+          // Please sync "P2P Sell" to the project
+        });
+      }
+      
+      var groupButton3 = document.getElementById("groupButton3");
+      if (groupButton3) {
+        groupButton3.addEventListener("click", function (e) {
+          // Please sync "Chat_Natalie" to the project
+        });
+      }
+      
+      var group37Richa = document.getElementById("group37Richa");
+      if (group37Richa) {
+        group37Richa.addEventListener("click", function (e) {
+          // Please sync "Chat_Richa" to the project
+        });
+      }
+      
+      var group37Vikash = document.getElementById("group37Vikash");
+      if (group37Vikash) {
+        group37Vikash.addEventListener("click", function (e) {
+          // Please sync "Chat_Vikash" to the project
+        });
+      }
+      </script>
+  </body>
+</html>
